@@ -2,12 +2,12 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdint.h>
-#include "ansi_color.h"
+#include "headers/ansi_color.h"
 #define STB_IMAGE_IMPLEMENTATION
 #define STBI_FAILURE_USERMSG
-#include "stb_image.h"
+#include "headers/stb_image.h"
 #define STB_IMAGE_RESIZE_IMPLEMENTATION
-#include "stb_image_resize2.h"
+#include "headers/stb_image_resize2.h"
 
 static bool	is_str_num(char *str)
 {
@@ -24,9 +24,9 @@ static char	*arguments_handler(int argc, char **argv)
 	if (argc != 4 || !is_str_num(argv[2]) || !is_str_num(argv[3]))
 	{
 		printf(
-			ANSI_COLOR("Invalid arguments.\nUsage:", ANSI_RED)" ./printimage "
-			ANSI_COLOR("<filename> <width to display> ", ANSI_MAGENTA)
-			ANSI_COLOR("<height to display>", ANSI_MAGENTA)"\n"
+			ANSI_COLOR("Invalid arguments!\nUsage:", ANSI_RED)" ./build/main "
+			ANSI_COLOR("<filename> <width to display> <height to display>", ANSI_MAGENTA)
+			"\n"
 		);
 		return (NULL);
 	}
